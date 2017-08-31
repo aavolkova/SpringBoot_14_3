@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="www.thymeleaf.org">
+<head>
+
+    <meta charset="utf-8" />
+
+    <title>Title</title>
+</head>
+<body>
+<h3>Movie Details:</h3>
+
+<div>
+    <h3 th:text="'ID: '            + ${movie.id}"></h3>
+    <h3 th:text="'Title: '         + ${movie.title}"></h3>
+    <h3 th:text="'Year: '          + ${movie.year}"></h3>
+    <h3 th:text="'Description: '   + ${movie.description}"></h3>
+    <h3 th:text="'Director ID: '   + ${movie.director.id}"></h3>
+    <h3 th:text="'Director Name: ' + ${movie.director.name}"></h3>
+</div>
+
+<a class="btn btn-secondary" href="/listAllDirectors" type = "submit">See All Directors</a><br/><br/>
+<a class="btn btn-secondary" href="/listAllMovies" type = "submit">See All Movies</a><br/><br/>
+<a class="btn btn-primary" href="/" role="button">Link to the Home Page</a>
+
+</body>
+</html>

@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="www.thymeleaf.org">
+<head>
+
+    <meta charset="utf-8" />
+    <title>Title</title>
+</head>
+<body>
+
+<h3>Director Details</h3>
+
+<div th:each="director : ${directors}">
+<h2 th:text="'Director ID: ' + ${director.id}"></h2>
+<h2 th:text="${director.name}"></h2>
+    <h4 th:inline="text">specializing in [[${director.genre}]]</h4>
+    <ul>
+        <th:block th:each="movie : ${director.movies}">
+            <li th:inline="text"><b>[[${movie.title}]]</b> released in [[${movie.year}]].
+                <b> Short description: </b>[[${movie.description}]]
+            </li>
+        </th:block>
+    </ul>
+
+
+</div>
+
+<a class="btn btn-secondary" href="/listAllDirectors" type = "submit">See All Directors</a><br><br>
+<a class="btn btn-secondary" href="/listAllMovies" type = "submit">See All Movies</a><br><br>
+<a class="btn btn-primary" href="/" role="button">Link to the Home Page</a>
+</body>
+</html>

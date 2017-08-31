@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<h2>Here is the Director information you just entered</h2>
+
+<div>
+    <h3 th:text="'Name: ' + ${newDirector.name}"></h3>
+    <h3 th:text="'Genre: ' + ${newDirector.genre}"></h3>
+</div>
+
+
+<a class="btn btn-secondary" href="/directorForm" type = "submit">Add Another Director</a><br/><br>
+<a class="btn btn-secondary" href="/listAllDirectors" type = "submit">See All Directors</a><br/><br>
+<a class="btn btn-secondary" href="/listAllMovies" type = "submit">See All Movies</a><br/><br>
+
+
+<!--<a class="btn btn-secondary" href="/movieForm" type = "submit">Add Movie for this Director</a><br/><br>-->
+<a class="btn btn-primary" href="/" role="button">Link to the Home Page</a>
+</body>
+</html>

@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="www.thymeleaf.org">
+<head>
+
+    <meta charset="utf-8" />
+    <title>Title</title>
+</head>
+<body>
+
+<h2>List of All Directors:</h2>
+<br>
+
+<table border="1" cellpadding="5">
+    <tr>
+        <td><b>Director ID</p></b></td>
+        <td><b>Director Name</p></b></td>
+        <td><b>Director Genre</p></b></td>
+        <td><b>Action</p></b></td>
+        <td><b>Action</p></b></td>
+        <td><b>Action</p></b></td>
+    </tr>
+
+    <!--iterate through all the directors-->
+    <th:block th:each="all:${alldirectors}">
+        <tr>
+            <td><p th:text="${all.id}"></p></td>
+            <td><a th:text="${all.name}" th:href="@{/directorDetails/{id}(id=${all.id})}"></a></td>
+            <td><p th:text="${all.genre}"></p></td>
+            <td>
+                <a th:href="@{/updateDirector/{id}(id=${all.id})}">Update</a>
+            </td>
+            <td>
+                <a th:href="@{/deleteDirector/{id}(id=${all.id})}">Delete</a>
+            </td>
+            <td>
+                <a th:href="@{/movieForm/{id}(id=${all.id})}">Add Movie</a>
+            </td>
+        </tr>
+    </th:block>
+</table>
+
+<a href="/directorForm"><input type="submit" value="Add New Director"/></a><br/><br>
+<a class="btn btn-secondary" href="/listAllMovies" type = "submit">See All Movies</a><br/><br>
+<a class="btn btn-primary" href="/" role="button">Link to the Home Page</a>
+</body>
+</html>
